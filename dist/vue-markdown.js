@@ -298,9 +298,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    if (this.enableFm) {
-	      this.md.use(_markdownItFrontMatter2.default, function (fm) {
-	        this.$emit('fmData', fm);
-	      });
+	      var f = function f(fm) {
+	        this.$emit('fm-data', fm);
+	      };
+	      this.md.use(_markdownItFrontMatter2.default, f.bind(this));
 	    }
 
 	    this.md.set({
