@@ -10,6 +10,7 @@ import mark from 'markdown-it-mark'
 import toc from 'markdown-it-toc-and-anchor'
 import katex from 'markdown-it-katex'
 import tasklists from 'markdown-it-task-lists'
+import frontmatter from 'markdown-it-front-matter'
 
 export default {
   md: new markdownIt(),
@@ -128,6 +129,14 @@ export default {
     postrender: {
       type: Function,
       default: (htmlData) => { return htmlData }
+    },
+    enableFm: {
+      type: Boolean,
+      default: false
+    },
+    frontmatter: {
+      type: Function,
+      default: (fm) => { return fm }
     }
   },
 
@@ -151,6 +160,12 @@ export default {
 
     if (this.emoji) {
       this.md.use(emoji)
+    }
+    
+    if (this.enableFm) {
+      this.md.use(frontmatter, function(fm) {
+        this.frontmatter(fm)
+      })
     }
 
     this.md.set({
