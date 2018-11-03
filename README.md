@@ -148,6 +148,7 @@ TIP: The default slot only renders **once** at the beginning, and it will overwr
 | ---- | --------- | -------- |
 | rendered | outHtml[String] | dispatch when render finish |
 | toc-rendered | tocHtml[String] | dispatch when TOC render finish, never dispatch if the toc[prop] is `false` |
+| fmData | fm[Object] | dispatch when render finish & frontmatter data has been found |
 
 # Thanks
 
