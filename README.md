@@ -32,6 +32,10 @@ Supported Markdown Syntax:
 
 `*katex` need add [katex css](https://unpkg.com/katex/dist/katex.min.css).
 
+## Note on frontmatter
+
+Frontmatter does not parse entered text. As a result, you can contain it anything what you want, f.e: YAML, JSON, etc.
+
 # Example
 
 [simple](https://github.com/miaolz123/vue-markdown/blob/master/example/simple)
@@ -148,7 +152,7 @@ TIP: The default slot only renders **once** at the beginning, and it will overwr
 | ---- | --------- | -------- |
 | rendered | outHtml[String] | dispatch when render finish |
 | toc-rendered | tocHtml[String] | dispatch when TOC render finish, never dispatch if the toc[prop] is `false` |
-| fmData | fm[Object] | dispatch when render finish & frontmatter data has been found |
+| fm-data | fm[String] | dispatch when render finish & frontmatter data has been found |
 
 # Thanks
 
