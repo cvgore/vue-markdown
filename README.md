@@ -26,6 +26,7 @@ Supported Markdown Syntax:
 * [x] *katex
 * [x] emoji
 * [x] mark
+* [x] [frontmatter](https://github.com/craigdmckenna/markdown-it-front-matter)
 
 `*SyntaxHighlighter` work with [Prism](http://prismjs.com) recommend
 
@@ -139,6 +140,7 @@ TIP: The default slot only renders **once** at the beginning, and it will overwr
 | anchorAttributes | Object | `{}` | anchor tag attributes such as `target: '_blank'` or `rel: 'nofollow'` |
 | prerender | Function (String) String | `null` | filter function before markdown parse |
 | postrender | Function (String) String | `null` | filter function after markdown parse |
+| enableFm | Boolean | `false` | enables frontmatter support |
 
 # Events
 
