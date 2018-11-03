@@ -133,10 +133,6 @@ export default {
     enableFm: {
       type: Boolean,
       default: false
-    },
-    frontmatter: {
-      type: Function,
-      default: (fm) => { return fm }
     }
   },
 
@@ -164,7 +160,7 @@ export default {
     
     if (this.enableFm) {
       this.md.use(frontmatter, function(fm) {
-        this.frontmatter(fm)
+        this.$emit('fmData', fm)
       })
     }
 
